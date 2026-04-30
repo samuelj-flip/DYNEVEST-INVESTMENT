@@ -1,0 +1,7 @@
+.bg-success-soft { background-color: rgba(40, 167, 69, 0.1); }
+.bg-warning-soft { background-color: rgba(255, 193, 7, 0.1); }
+.accordion-button:not(.collapsed) {
+    background-color: transparent !important;
+    color: #f0b90b !important;
+    box-shadow: none !important;
+}

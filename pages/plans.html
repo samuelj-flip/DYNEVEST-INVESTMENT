@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYNEVEST | Smart Crypto Investment</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        body {
+            padding-top: 80px;
+            background-color: #0b0e11;
+            color: white;
+        }
+
+        .plan-card {
+            transition: transform 0.3s ease;
+            border: 1px solid #1e2329;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            border-color: #f0b90b;
+        }
+
+        .hero {
+            padding: 100px;
+            background-color: #070500;
+        }
+
+        .hero a {
+            text-decoration: none;
+            color: #f0b90b;
+        }
+
+        .hero a:hover {
+            text-decoration: underline;
+            text-decoration-color: #f0b90b;
+        }
+    </style>
+</head>
+
+<body style="background-color: #0b0e11;"> <!-- Added background color to body to prevent white flashes -->
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top"
+            style="background-color: #0b0e11; border-bottom: 1px solid #1e2329;">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-uppercase" href="/index.html">
+                    <span style="color: #f0b90b;">DYNE</span>VEST
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link px-3" href="/index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-3 active" href="./plans.html">Investment Plans</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="./about.htm">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="./blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="./contacts.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <a href="./login.html" class="btn btn-link text-white text-decoration-none me-3">Login</a>
+                        <a href="./register.html" class="btn btn-warning px-4 fw-bold"
+                            style="background-color: #f0b90b; border: none;">Register</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero container-fluid text-center">
+        <div class="text-white">
+            <h1>Investment Plan</h1>
+        </div>
+        <div class="mt-3 link">
+            <a href="/index.html">Home</a>
+            <span class="mx-1 fs-4 text-white">/</span>
+            <span class="text-white fs-5 text-white"><i></i> Investment Plan</span>
+        </div>
+    </section>
+
+    <!-- Sections -->
+    <main>
+        <!-- Section 2: Header & Plans -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h1 class="fw-bold">Mining <span style="color: #f0b90b;">Tiers</span></h1>
+                    <p class="text-secondary">Predictable growth through professional infrastructure.</p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <!-- Starter Plan -->
+                    <div class="col-md-4">
+                        <div class="card plan-card bg-dark text-white h-100 p-4">
+                            <div class="card-body text-center">
+                                <h3 class="fw-bold">Starter</h3>
+                                <div class="h1 fw-bold text-warning my-3">1.5% <small class="fs-6 text-muted">/
+                                        Daily</small></div>
+                                <ul class="list-unstyled text-secondary mb-4">
+                                    <li>Min: $100</li>
+                                    <li>Max: $4,999</li>
+                                    <li>Duration: 30 Days</li>
+                                </ul>
+                                <a href="../register.html" class="btn btn-outline-warning w-100">Invest Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Plan -->
+                    <div class="col-md-4">
+                        <div class="card plan-card bg-dark text-white h-100 p-4 border-warning shadow-lg">
+                            <div class="card-body text-center">
+                                <span class="badge bg-warning text-dark mb-2">MOST POPULAR</span>
+                                <h3 class="fw-bold">Business</h3>
+                                <div class="h1 fw-bold text-warning my-3">2.5% <small class="fs-6 text-muted">/
+                                        Daily</small></div>
+                                <ul class="list-unstyled text-secondary mb-4">
+                                    <li>Min: $5,000</li>
+                                    <li>Max: $19,999</li>
+                                    <li>Duration: 45 Days</li>
+                                </ul>
+                                <a href="../register.html" class="btn btn-warning w-100 fw-bold">Invest Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Elite Plan -->
+                    <div class="col-md-4">
+                        <div class="card plan-card bg-dark text-white h-100 p-4">
+                            <div class="card-body text-center">
+                                <h3 class="fw-bold">Elite</h3>
+                                <div class="h1 fw-bold text-warning my-3">4.0% <small class="fs-6 text-muted">/
+                                        Daily</small></div>
+                                <ul class="list-unstyled text-secondary mb-4">
+                                    <li>Min: $20,000</li>
+                                    <li>Max: Unlimited</li>
+                                    <li>Duration: 60 Days</li>
+                                </ul>
+                                <a href="../register.html" class="btn btn-outline-warning w-100">Invest Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Profit Calculator (Vanilla JS) -->
+        <section class="py-5" style="background-color: #161a1e;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 bg-dark p-5 rounded-4 border border-secondary shadow">
+                        <h3 class="fw-bold text-center mb-4">Profit <span style="color: #f0b90b;">Calculator</span></h3>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary small">Investment Amount ($)</label>
+                            <input type="number" id="calcAmount"
+                                class="form-control bg-dark border-secondary text-white"
+                                placeholder="Enter amount e.g. 1000">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label text-secondary small">Select Tier</label>
+                            <select id="calcTier" class="form-select bg-dark border-secondary text-white">
+                                <option value="0.015">Starter (1.5%)</option>
+                                <option value="0.025">Business (2.5%)</option>
+                                <option value="0.04">Elite (4.0%)</option>
+                            </select>
+                        </div>
+                        <div class="p-3 rounded bg-secondary bg-opacity-10 text-center">
+                            <span class="text-secondary small d-block">Daily Profit</span>
+                            <h2 class="fw-bold text-warning mb-0">$<span id="dailyResult">0.00</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-5" style="background-color: #0b0e11; border-top: 1px solid #1e2329;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="fw-bold mb-4" style="color: #f0b90b;">DYNEVEST</h4>
+                    <p class="text-secondary small">The next generation of digital asset management. We simplify the
+                        complexity of crypto mining for everyday investors.</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i
+                                class="fa-brands fa-telegram"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa-brands fa-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <h6 class="fw-bold text-white mb-4">Quick Links</h6>
+                    <ul class="list-unstyled text-secondary small">
+                        <li class="mb-2"><a href="/index.html" class="text-decoration-none text-secondary">Home</a></li>
+                        <li class="mb-2"><a href="./about.htm" class="text-decoration-none text-secondary">About
+                                Us</a>
+                        </li>
+                        <li class="mb-2"><a href="./plans.html"
+                                class="text-decoration-none text-secondary">Investment</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold text-white mb-4">Legal</h6>
+                    <ul class="list-unstyled text-secondary small">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold text-white mb-4">Newsletter</h6>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control bg-dark border-secondary text-white"
+                            placeholder="Email Address">
+                        <button class="btn btn-warning" type="button">Join</button>
+                    </div>
+                    <p class="text-secondary" style="font-size: 13px;">&copy; <span id="year"></span> DYNEVEST. All
+                        Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get year: Year will constantly update itself;
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Vanilla JS Profit Calculator
+        const amountInput = document.getElementById('calcAmount');
+        const tierSelect = document.getElementById('calcTier');
+        const resultDisplay = document.getElementById('dailyResult');
+
+        function calculate() {
+            const amount = parseFloat(amountInput.value) || 0;
+            const rate = parseFloat(tierSelect.value);
+            const daily = amount * rate;
+            resultDisplay.textContent = daily.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        amountInput.addEventListener('input', calculate);
+        tierSelect.addEventListener('change', calculate);
+
+    </script>
+
+    <script src="/libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.js"></script>
+</body>
+
+</html>

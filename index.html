@@ -4,14 +4,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DYNEVEST | Investment</title>
-    <link rel="stylesheet" href="./libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.css.map">
+    <title>DYNEVEST | Smart Crypto Investment</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        body {
+            padding-top: 70px;
+        }
+    </style>
 </head>
 
-<body>
-    
+<body style="background-color: #0b0e11;"> <!-- Added background color to body to prevent white flashes -->
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top"
+            style="background-color: #0b0e11; border-bottom: 1px solid #1e2329;">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-uppercase" href="index.html">
+                    <span style="color: #f0b90b;">DYNE</span>VEST
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link px-3 active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="./pages/plans.html">Investment Plans</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="./pages/about.htm">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="./pages/blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="./pages/contacts.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <a href="./pages/login.html" class="btn btn-link text-white text-decoration-none me-3">Login</a>
+                        <a href="./pages/register.html" class="btn btn-warning px-4 fw-bold"
+                            style="background-color: #f0b90b; border: none;">Register</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-    <script src="./libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.js.map"></script>
+    <!-- Hero Section -->
+    <main style="background-color: #0b0e11; color: white;">
+        <section class="py-5 position-relative overflow-hidden">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="display-3 fw-bold mb-4">Grow Your Wealth with <span
+                                style="color: #f0b90b;">DYNEVEST</span></h1>
+                        <p class="lead mb-5 text-secondary">Secure your financial future using our professional cloud
+                            mining and automated investment platform. Simple. Fast. Secure.</p>
+                        <div class="d-grid d-md-flex gap-3">
+                            <a href="./pages/register.html" class="btn btn-warning btn-lg px-5 fw-bold"
+                                style="background-color: #f0b90b;">Get Started</a>
+                            <a href="./pages/plans.html" class="btn btn-outline-light btn-lg px-5">View Plans</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-none d-lg-block text-center">
+                        <img src="assets/img/hero-image.png" class="img-fluid" alt="Dynevest growth illustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- The Call-to-Action (CTA) Banner -->
+    <section class="py-5" style="background-color: #0b0e11;">
+        <div class="container">
+            <div class="p-5 rounded-4 text-center position-relative overflow-hidden"
+                style="background: linear-gradient(90deg, #f0b90b 0%, #d4a30a 100%);">
+                <div class="position-relative z-index-1">
+                    <h2 class="fw-bold text-dark mb-3">Ready to Join the Revolution?</h2>
+                    <p class="text-dark mb-4 opacity-75">Start with as little as $100 and watch your portfolio grow
+                        daily.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="./pages/register.html" class="btn btn-dark btn-lg px-5 fw-bold text-warning">Create
+                            Account</a>
+                        <a href="./pages/contacts.html" class="btn btn-outline-dark btn-lg px-4">Support Team</a>
+                    </div>
+                </div>
+                <div class="position-absolute translate-middle"
+                    style="width: 300px; height: 300px; background: rgba(255,255,255,0.1); border-radius: 50%; top: 50%; left: 0;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5" style="background-color: #0b0e11; border-top: 1px solid #1e2329;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="fw-bold mb-4" style="color: #f0b90b;">DYNEVEST</h4>
+                    <p class="text-secondary small">The next generation of digital asset management. We simplify the
+                        complexity of crypto mining for everyday investors.</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i
+                                class="fa-brands fa-telegram"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa-brands fa-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <h6 class="fw-bold text-white mb-4">Quick Links</h6>
+                    <ul class="list-unstyled text-secondary small">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none text-secondary">Home</a></li>
+                        <li class="mb-2"><a href="./pages/about.htm" class="text-decoration-none text-secondary">About
+                                Us</a>
+                        </li>
+                        <li class="mb-2"><a href="./pages/plans.html"
+                                class="text-decoration-none text-secondary">Investment</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold text-white mb-4">Legal</h6>
+                    <ul class="list-unstyled text-secondary small">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold text-white mb-4">Newsletter</h6>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control bg-dark border-secondary text-white"
+                            placeholder="Email Address">
+                        <button class="btn btn-warning" type="button">Join</button>
+                    </div>
+                    <p class="text-secondary" style="font-size: 13px;">&copy; <span id="year"></span> DYNEVEST. All
+                        Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get year: Year will constantly update itself;
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script src="./libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
