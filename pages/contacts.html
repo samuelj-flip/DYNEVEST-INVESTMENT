@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | DYNEVEST</title>
+    <link rel="stylesheet" href="../libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #0b0e11;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .contact-card {
+            background-color: #161a1e;
+            border: 1px solid #1e2329;
+            border-radius: 12px;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: #f0b90b;
+        }
+
+        .form-control {
+            background-color: #0b0e11;
+            border: 1px solid #2b3139;
+            color: white;
+        }
+
+        .form-control:focus {
+            background-color: #0b0e11;
+            color: white;
+            border-color: #f0b90b;
+            box-shadow: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #f0b90b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="container fs-3 mb-4">
+        <a href="../index.html"><i class="fa-solid fa-arrow-left fs-5 me-2"></i>Home</a>
+    </nav>
+
+    <main class="container py-4">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-white">Get in <span style="color: #f0b90b;">Touch</span></h1>
+            <p class="text-secondary lead">Have questions about our mining tiers? Our global support team is available
+                24/7.</p>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <div class="d-flex flex-column gap-4">
+
+                    <div class="contact-card p-4 d-flex align-items-center">
+                        <div class="icon-box me-4 text-warning fs-2">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Email Support</h5>
+                            <p class="text-secondary mb-0 small">support@dynevest.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card p-4 d-flex align-items-center">
+                        <div class="icon-box me-4 text-warning fs-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Telegram</h5>
+                            <p class="text-secondary mb-0 small">@Dynevest_Global</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card p-4 d-flex align-items-center">
+                        <div class="icon-box me-4 text-warning fs-2">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-1">Response Time</h5>
+                            <p class="text-secondary mb-0 small">Within 2 hours (24/7)</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="contact-card p-4 p-md-5">
+                    <h3 class="fw-bold mb-4">Send a Message</h3>
+
+                    <form action="#" method="POST" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small text-secondary">First Name</label>
+                                <input type="text" class="form-control form-control-lg" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-secondary">Last Name</label>
+                                <input type="text" class="form-control form-control-lg" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 mt-3">
+                            <label class="form-label small text-secondary">Email Address</label>
+                            <input type="email" class="form-control form-control-lg" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label small text-secondary">Message</label>
+                            <textarea class="form-control form-control-lg" rows="5"
+                                placeholder="How can our team help you?" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-warning btn-lg w-100 fw-bold"
+                            style="background-color: #f0b90b;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Basic Bootstrap validation script for client-side check
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+
+</html>

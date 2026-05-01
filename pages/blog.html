@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights & News | DYNEVEST</title>
+    <link rel="stylesheet" href="../libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #0b0e11;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .blog-card {
+            background-color: #161a1e;
+            border: 1px solid #1e2329;
+            border-radius: 12px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: #f0b90b;
+        }
+
+        .featured-card {
+            background-color: #161a1e;
+            border: 1px solid #1e2329;
+            border-radius: 16px;
+            border-left: 4px solid #f0b90b;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #f0b90b;
+        }
+
+        .text-warning-hover:hover {
+            color: #f0b90b !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top"
+            style="background-color: #0b0e11; border-bottom: 1px solid #1e2329;">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-uppercase" href="../index.html">
+                    <span style="color: #f0b90b;">DYNE</span>VEST
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link px-3" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="./plans.html">Investment Plans</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="./about.htm">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-3 active" href="./blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="./contacts.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <a href="./login.html" class="btn btn-link text-white text-decoration-none me-3">Login</a>
+                        <a href="./register.html" class="btn btn-warning px-4 fw-bold"
+                            style="background-color: #f0b90b; border: none;">Register</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-4">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-white">Market <span style="color: #f0b90b;">Insights</span></h1>
+            <p class="text-secondary lead">Stay updated with the latest trends in cryptocurrency mining and digital
+                assets.</p>
+        </div>
+
+        <div class="featured-card p-4 p-md-5 mb-5 shadow-lg">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <span class="badge bg-warning text-dark mb-3 fw-bold">FEATURED ARTICLE</span>
+                    <h2 class="fw-bold mb-3"><a href="#" class="text-white text-decoration-none text-warning-hover">The
+                            2026 Crypto Mining Outlook: What Investors Need to Know</a></h2>
+                    <p class="text-secondary mb-4">As mining hardware advances and energy efficiency takes center stage,
+                        we break down how cloud mining remains the most accessible way to participate in hash rate
+                        yields this year.</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span class="text-secondary small"><i class="fa-solid fa-calendar me-2"></i>May 1, 2026</span>
+                        <a href="#" class="btn btn-outline-warning btn-sm fw-bold px-3">Read More</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center d-none d-lg-block">
+                    <i class="fa-solid fa-chart-line fa-8x text-warning opacity-25"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="blog-card d-flex flex-column p-4">
+                    <div class="mb-3">
+                        <span class="badge bg-secondary text-white fw-normal">Education</span>
+                    </div>
+                    <h4 class="fw-bold mb-2">
+                        <a href="#" class="text-white text-decoration-none text-warning-hover">What is Hash Rate and Why
+                            Does it Matter?</a>
+                    </h4>
+                    <p class="text-secondary small mb-4 flex-grow-1">Learn the basics of mining computational power and
+                        how it directly impacts your daily earnings at DYNEVEST.</p>
+                    <div class="d-flex align-items-center justify-content-between mt-auto">
+                        <span class="text-secondary" style="font-size: 12px;"><i
+                                class="fa-solid fa-calendar me-2"></i>April 28, 2026</span>
+                        <a href="#" class="text-warning text-decoration-none small fw-bold">Read Post <i
+                                class="fa-solid fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="blog-card d-flex flex-column p-4">
+                    <div class="mb-3">
+                        <span class="badge bg-secondary text-white fw-normal">Security</span>
+                    </div>
+                    <h4 class="fw-bold mb-2">
+                        <a href="#" class="text-white text-decoration-none text-warning-hover">How We Secure Your
+                            Digital Portfolio</a>
+                    </h4>
+                    <p class="text-secondary small mb-4 flex-grow-1">An inside look at our multi-signature cold wallets
+                        and technical infrastructure designed to prevent unauthorized access.</p>
+                    <div class="d-flex align-items-center justify-content-between mt-auto">
+                        <span class="text-secondary" style="font-size: 12px;"><i
+                                class="fa-solid fa-calendar me-2"></i>April 20, 2026</span>
+                        <a href="#" class="text-warning text-decoration-none small fw-bold">Read Post <i
+                                class="fa-solid fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="blog-card d-flex flex-column p-4">
+                    <div class="mb-3">
+                        <span class="badge bg-secondary text-white fw-normal">Platform Updates</span>
+                    </div>
+                    <h4 class="fw-bold mb-2">
+                        <a href="#" class="text-white text-decoration-none text-warning-hover">DYNEVEST Expansion: New
+                            ASICs Online</a>
+                    </h4>
+                    <p class="text-secondary small mb-4 flex-grow-1">We've upgraded our hardware arrays. See how this
+                        optimization ensures higher consistent uptime for our investors.</p>
+                    <div class="d-flex align-items-center justify-content-between mt-auto">
+                        <span class="text-secondary" style="font-size: 12px;"><i
+                                class="fa-solid fa-calendar me-2"></i>April 15, 2026</span>
+                        <a href="#" class="text-warning text-decoration-none small fw-bold">Read Post <i
+                                class="fa-solid fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-5" style="background-color: #0b0e11; border-top: 1px solid #1e2329;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="fw-bold mb-4" style="color: #f0b90b;">DYNEVEST</h4>
+                    <p class="text-secondary small">The next generation of digital asset management. We simplify the
+                        complexity of crypto mining for everyday investors.</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i
+                                class="fa-brands fa-telegram"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa-brands fa-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <h6 class="fw-bold text-white mb-4">Quick Links</h6>
+                    <ul class="list-unstyled text-secondary small">
+                        <li class="mb-2"><a href="/index.html" class="text-decoration-none text-secondary">Home</a></li>
+                        <li class="mb-2"><a href="./about.htm" class="text-decoration-none text-secondary">About
+                                Us</a>
+                        </li>
+                        <li class="mb-2"><a href="./plans.html"
+                                class="text-decoration-none text-secondary">Investment</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold text-white mb-4">Legal</h6>
+                    <ul class="list-unstyled text-secondary small">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold text-white mb-4">Newsletter</h6>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control bg-dark border-secondary text-white"
+                            placeholder="Email Address">
+                        <button class="btn btn-warning" type="button">Join</button>
+                    </div>
+                    <p class="text-secondary" style="font-size: 13px;">&copy; <span id="year"></span> DYNEVEST. All
+                        Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
