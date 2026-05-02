@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings | DYNEVEST</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #0b0e11;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styles for Desktop */
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #12161c;
+            border-right: 1px solid #1e2329;
+            z-index: 1030;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar .nav-link {
+            color: #848e9c;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin: 4px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            color: #f0b90b;
+            background-color: #161a1e;
+        }
+
+        /* Main Content wrapper */
+        .main-content {
+            margin-left: 260px;
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        /* Dash Cards */
+        .dash-card {
+            background-color: #161a1e;
+            border: 1px solid #1e2329;
+            border-radius: 12px;
+            padding: 30px;
+            height: 100%;
+        }
+
+        .form-control,
+        .form-control:focus {
+            background-color: #0b0e11;
+            border-color: #2b3139;
+            color: white;
+        }
+
+        .form-control:focus {
+            border-color: #f0b90b;
+            box-shadow: none;
+        }
+
+        .form-control:disabled {
+            background-color: #12161c;
+            border-color: #1e2329;
+            opacity: 0.6;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 991.98px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 24px 16px;
+                padding-top: 85px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="d-lg-none navbar navbar-dark fixed-top px-3 py-2"
+        style="background-color: #12161c; border-bottom: 1px solid #1e2329; z-index:1040;">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand fw-bold text-uppercase fs-5" href="../index.html">
+                <span style="color: #f0b90b;">DYNE</span>VEST
+            </a>
+            <div class="d-flex align-items-center gap-3">
+                <div class="dropdown">
+                    <a class="text-white dropdown-toggle text-decoration-none d-flex align-items-center gap-1" href="#"
+                        id="mobLangPicker" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-globe"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end border-secondary shadow"
+                        aria-labelledby="mobLangPicker">
+                        <li><a class="dropdown-item py-2" href="#" onclick="applyTranslations('en'); return false;">🇬🇧
+                                English</a></li>
+                        <li><a class="dropdown-item py-2" href="#" onclick="applyTranslations('de'); return false;">🇩🇪
+                                Deutsch</a></li>
+                        <li><a class="dropdown-item py-2" href="#" onclick="applyTranslations('es'); return false;">🇪🇸
+                                Español</a></li>
+                    </ul>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#sidebarMenu">
+                    <i class="fa-solid fa-bars fs-4 text-warning"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar collapse d-lg-block" id="sidebarMenu">
+        <div class="d-flex flex-column h-100">
+            <div class="p-4 d-none d-lg-block">
+                <a class="navbar-brand fw-bold text-uppercase fs-4 d-block" href="../index.html">
+                    <span style="color: #f0b90b;">DYNE</span>VEST
+                </a>
+            </div>
+
+            <ul class="nav flex-column mb-auto pt-3 pt-lg-0">
+                <li class="nav-item">
+                    <a href="./index.html" class="nav-link">
+                        <i class="fa-solid fa-chart-pie"></i> <span data-i18n="dash_nav_overview">Overview</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./plans.html" class="nav-link">
+                        <i class="fa-solid fa-cube"></i> <span data-i18n="dash_nav_plans">Mining Plans</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./transactions.html" class="nav-link">
+                        <i class="fa-solid fa-receipt"></i> <span data-i18n="dash_nav_trans">Transactions</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./settings.html" class="nav-link active">
+                        <i class="fa-solid fa-sliders"></i> <span data-i18n="dash_nav_settings">Settings</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="p-3 border-top border-secondary border-opacity-25 mt-auto">
+                <div class="dropdown d-none d-lg-block mb-3">
+                    <a class="btn btn-dark w-100 border-secondary d-flex align-items-center justify-content-between text-white"
+                        href="#" id="deskLangPicker" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span><i class="fa-solid fa-globe me-2 text-warning"></i><span
+                                data-i18n="dash_nav_lang">Language</span></span>
+                        <i class="fa-solid fa-angle-up small"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark w-100 border-secondary"
+                        aria-labelledby="deskLangPicker">
+                        <li><a class="dropdown-item" href="#" onclick="applyTranslations('en'); return false;">🇬🇧
+                                English</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="applyTranslations('de'); return false;">🇩🇪
+                                Deutsch</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="applyTranslations('es'); return false;">🇪🇸
+                                Español</a></li>
+                    </ul>
+                </div>
+                <a href="../index.html"
+                    class="btn btn-outline-danger btn-sm w-100 d-flex align-items-center justify-content-center gap-2 py-2">
+                    <i class="fa-solid fa-right-from-bracket"></i> <span data-i18n="dash_nav_logout">Sign Out</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="container-fluid p-0">
+            <div class="mb-5">
+                <h2 class="fw-bold mb-1 text-white" data-i18n="settings_title">Account Settings</h2>
+                <p class="text-secondary mb-0 small" data-i18n="settings_subtitle">Update your personal information,
+                    wallet addresses, and security credentials.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="dash-card">
+                        <h5 class="fw-bold text-white mb-4"><i class="fa-solid fa-user me-2 text-warning"></i> <span
+                                data-i18n="settings_sec_profile">Profile Management</span></h5>
+                        <form onsubmit="handleSettingsSave(event)">
+                            <div class="mb-3">
+                                <label class="form-label small text-secondary fw-bold"
+                                    data-i18n="settings_lbl_name">Full Name</label>
+                                <input type="text" class="form-control py-2" value="Samuel James">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label small text-secondary fw-bold"
+                                    data-i18n="settings_lbl_email">Email Address</label>
+                                <input type="email" class="form-control py-2" value="samuel@example.com" disabled>
+                                <small class="text-muted mt-1 d-block" style="font-size: 11px;"
+                                    data-i18n="settings_email_notice">Contact support to modify registered
+                                    email.</small>
+                            </div>
+                            <button type="submit" class="btn btn-warning fw-bold px-4 text-dark"
+                                style="background-color: #f0b90b; border: none;" data-i18n="settings_btn_save">Save
+                                Changes</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="dash-card">
+                        <h5 class="fw-bold text-white mb-4"><i class="fa-solid fa-wallet me-2 text-warning"></i> <span
+                                data-i18n="settings_sec_wallet">Payout Destinations</span></h5>
+                        <form onsubmit="handleSettingsSave(event)">
+                            <div class="mb-3">
+                                <label class="form-label small text-secondary fw-bold"
+                                    data-i18n="settings_lbl_btc">Bitcoin (BTC) Address</label>
+                                <input type="text" class="form-control py-2" placeholder="bc1q..."
+                                    value="bc1qxy2kgdy6jrsqtzq2n0yrf2493p83kkfjhx0wlh">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label small text-secondary fw-bold"
+                                    data-i18n="settings_lbl_usdt">USDT (TRC-20) Address</label>
+                                <input type="text" class="form-control py-2" placeholder="T..."
+                                    value="TXU8n7eR6yXz9p5k4M2Lq1Qv7W5r3Z8h">
+                            </div>
+                            <button type="submit" class="btn btn-outline-warning fw-bold px-4"
+                                data-i18n="settings_btn_save">Update Wallets</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="dash-card">
+                        <h5 class="fw-bold text-white mb-4"><i class="fa-solid fa-shield-halved me-2 text-warning"></i>
+                            <span data-i18n="settings_sec_security">Security & Credentials</span></h5>
+                        <form onsubmit="handleSettingsSave(event)">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label class="form-label small text-secondary fw-bold"
+                                        data-i18n="settings_lbl_current_pass">Current Password</label>
+                                    <input type="password" class="form-control py-2" placeholder="••••••••">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label small text-secondary fw-bold"
+                                        data-i18n="settings_lbl_new_pass">New Password</label>
+                                    <input type="password" class="form-control py-2" placeholder="••••••••">
+                                </div>
+                                <div class="col-md-4 d-flex align-items-end">
+                                    <button type="submit" class="btn btn-warning fw-bold px-4 w-100 text-dark"
+                                        style="background-color: #f0b90b; border: none;"
+                                        data-i18n="settings_btn_save">Update Password</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1060;">
+        <div id="langToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive"
+            aria-atomic="true" style="background-color: #161a1e; border: 1px solid #1e2329 !important;">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="fa-solid fa-circle-check text-success me-2"></i>
+                    <span id="toastMessage">Language changed successfully!</span>
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Use the existing toast logic to show feedback when settings are saved
+        function handleSettingsSave(event) {
+            event.preventDefault();
+
+            // Show successful save feedback
+            const toastMessage = document.getElementById("toastMessage");
+            toastMessage.textContent = "Profile updated successfully!";
+            const toastEl = new bootstrap.Toast(document.getElementById("langToast"));
+            toastEl.show();
+        }
+    </script>
+
+    <script src="../scripts/lang.js"></script>
+    <script src="../libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

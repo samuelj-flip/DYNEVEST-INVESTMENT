@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining Plans | DYNEVEST</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #0b0e11;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styles for Desktop */
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #12161c;
+            border-right: 1px solid #1e2329;
+            z-index: 1030;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar .nav-link {
+            color: #848e9c;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin: 4px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            color: #f0b90b;
+            background-color: #161a1e;
+        }
+
+        /* Main Content wrapper */
+        .main-content {
+            margin-left: 260px;
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        /* Mining Plan Custom Cards */
+        .plan-card {
+            background-color: #161a1e;
+            border: 1px solid #1e2329;
+            border-radius: 16px;
+            padding: 32px 24px;
+            height: 100%;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            border-color: #f0b90b;
+        }
+
+        .plan-card.featured {
+            border-color: #f0b90b;
+            background: linear-gradient(180deg, #161a1e 0%, #1a1505 100%);
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 991.98px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 24px 16px;
+                padding-top: 85px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="d-lg-none navbar navbar-dark fixed-top px-3 py-2"
+        style="background-color: #12161c; border-bottom: 1px solid #1e2329; z-index:1040;">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand fw-bold text-uppercase fs-5" href="../index.html">
+                <span style="color: #f0b90b;">DYNE</span>VEST
+            </a>
+            <div class="d-flex align-items-center gap-3">
+                <div class="dropdown">
+                    <a class="text-white dropdown-toggle text-decoration-none d-flex align-items-center gap-1" href="#"
+                        id="mobLangPicker" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-globe"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end border-secondary shadow"
+                        aria-labelledby="mobLangPicker">
+                        <li><a class="dropdown-item py-2" href="#" onclick="applyTranslations('en'); return false;">🇬🇧
+                                English</a></li>
+                        <li><a class="dropdown-item py-2" href="#" onclick="applyTranslations('de'); return false;">🇩🇪
+                                Deutsch</a></li>
+                        <li><a class="dropdown-item py-2" href="#" onclick="applyTranslations('es'); return false;">🇪🇸
+                                Español</a></li>
+                    </ul>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#sidebarMenu">
+                    <i class="fa-solid fa-bars fs-4 text-warning"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar collapse d-lg-block" id="sidebarMenu">
+        <div class="d-flex flex-column h-100">
+            <div class="p-4 d-none d-lg-block">
+                <a class="navbar-brand fw-bold text-uppercase fs-4 d-block" href="../index.html">
+                    <span style="color: #f0b90b;">DYNE</span>VEST
+                </a>
+            </div>
+
+            <ul class="nav flex-column mb-auto pt-3 pt-lg-0">
+                <li class="nav-item">
+                    <a href="./index.html" class="nav-link">
+                        <i class="fa-solid fa-chart-pie"></i> <span data-i18n="dash_nav_overview">Overview</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./plans.html" class="nav-link active">
+                        <i class="fa-solid fa-cube"></i> <span data-i18n="dash_nav_plans">Mining Plans</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./transactions.html" class="nav-link">
+                        <i class="fa-solid fa-receipt"></i> <span data-i18n="dash_nav_trans">Transactions</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="./settings.html" class="nav-link">
+                        <i class="fa-solid fa-sliders"></i> <span data-i18n="dash_nav_settings">Settings</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="p-3 border-top border-secondary border-opacity-25 mt-auto">
+                <div class="dropdown d-none d-lg-block mb-3">
+                    <a class="btn btn-dark w-100 border-secondary d-flex align-items-center justify-content-between text-white"
+                        href="#" id="deskLangPicker" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span><i class="fa-solid fa-globe me-2 text-warning"></i><span
+                                data-i18n="dash_nav_lang">Language</span></span>
+                        <i class="fa-solid fa-angle-up small"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark w-100 border-secondary"
+                        aria-labelledby="deskLangPicker">
+                        <li><a class="dropdown-item" href="#" onclick="applyTranslations('en'); return false;">🇬🇧
+                                English</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="applyTranslations('de'); return false;">🇩🇪
+                                Deutsch</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="applyTranslations('es'); return false;">🇪🇸
+                                Español</a></li>
+                    </ul>
+                </div>
+                <a href="../index.html"
+                    class="btn btn-outline-danger btn-sm w-100 d-flex align-items-center justify-content-center gap-2 py-2">
+                    <i class="fa-solid fa-right-from-bracket"></i> <span data-i18n="dash_nav_logout">Sign Out</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="container-fluid p-0">
+            <div class="mb-5">
+                <h2 class="fw-bold mb-1 text-white" data-i18n="plans_title">Mining Contract Portals</h2>
+                <p class="text-secondary mb-0 small" data-i18n="plans_subtitle">Choose the computational lease that
+                    matches your investment parameters.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-xxl-4">
+                    <div class="plan-card d-flex flex-column justify-content-between">
+                        <div>
+                            <span class="badge bg-secondary text-white mb-3 fw-normal" data-i18n="plan_t1_tag">Starter
+                                Miner</span>
+                            <h3 class="fw-bold text-white mb-2" data-i18n="plan_t1_name">Antminer S19 Pro</h3>
+                            <p class="text-secondary small mb-4" data-i18n="plan_t1_desc">Perfect entry option to
+                                experience the cloud infrastructure firsthand.</p>
+
+                            <h2 class="fw-bold text-warning mb-1">$500 <span
+                                    class="fs-6 text-secondary fw-normal">USD</span></h2>
+                            <p class="text-secondary small mb-4" data-i18n="plan_t1_duration">Contract Term: 120 Days
+                            </p>
+
+                            <hr class="border-secondary border-opacity-25 my-4">
+
+                            <ul class="list-unstyled mb-4 small text-secondary">
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i> <strong>15
+                                        TH/s</strong> <span data-i18n="plan_per_unit">Dedicated Hashrate</span></li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>
+                                    <strong>0.8%</strong> <span data-i18n="plan_per_day">Estimated Daily ROI</span>
+                                </li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i> <span
+                                        data-i18n="plan_per_maintenance">Zero Maintenance Fees</span></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-outline-warning w-100 fw-bold py-2 mt-auto"
+                            onclick="confirmPurchase('Antminer S19 Pro', 500)" data-i18n="plan_btn_buy">Activate
+                            Tier</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xxl-4">
+                    <div class="plan-card featured d-flex flex-column justify-content-between">
+                        <span
+                            class="position-absolute top-0 end-0 bg-warning text-dark px-3 py-1 fw-bold rounded-bottom-start small"
+                            style="border-bottom-left-radius: 12px;" data-i18n="plan_pop_badge">MOST POPULAR</span>
+                        <div>
+                            <span class="badge bg-warning text-dark mb-3 fw-bold" data-i18n="plan_t2_tag">Core
+                                Miner</span>
+                            <h3 class="fw-bold text-white mb-2" data-i18n="plan_t2_name">Whatsminer M50S</h3>
+                            <p class="text-secondary small mb-4" data-i18n="plan_t2_desc">Balanced performance and
+                                hashrate for expanding mid-scale portfolios.</p>
+
+                            <h2 class="fw-bold text-warning mb-1">$2,500 <span
+                                    class="fs-6 text-secondary fw-normal">USD</span></h2>
+                            <p class="text-secondary small mb-4" data-i18n="plan_t2_duration">Contract Term: 180 Days
+                            </p>
+
+                            <hr class="border-secondary border-opacity-25 my-4">
+
+                            <ul class="list-unstyled mb-4 small text-secondary">
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i> <strong>82
+                                        TH/s</strong> <span data-i18n="plan_per_unit">Dedicated Hashrate</span></li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>
+                                    <strong>1.2%</strong> <span data-i18n="plan_per_day">Estimated Daily ROI</span>
+                                </li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i> <span
+                                        data-i18n="plan_per_maintenance">Priority Pool Connection</span></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-warning w-100 fw-bold py-2 mt-auto text-dark"
+                            style="background-color: #f0b90b; border: none;"
+                            onclick="confirmPurchase('Whatsminer M50S', 2500)" data-i18n="plan_btn_buy">Activate
+                            Tier</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xxl-4">
+                    <div class="plan-card d-flex flex-column justify-content-between">
+                        <div>
+                            <span class="badge bg-secondary text-white mb-3 fw-normal"
+                                data-i18n="plan_t3_tag">Enterprise Miner</span>
+                            <h3 class="fw-bold text-white mb-2" data-i18n="plan_t3_name">AvalonMiner 1366</h3>
+                            <p class="text-secondary small mb-4" data-i18n="plan_t3_desc">Built for professional yield
+                                hunters needing major computing power.</p>
+
+                            <h2 class="fw-bold text-warning mb-1">$10,000 <span
+                                    class="fs-6 text-secondary fw-normal">USD</span></h2>
+                            <p class="text-secondary small mb-4" data-i18n="plan_t3_duration">Contract Term: 365 Days
+                            </p>
+
+                            <hr class="border-secondary border-opacity-25 my-4">
+
+                            <ul class="list-unstyled mb-4 small text-secondary">
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i> <strong>340
+                                        TH/s</strong> <span data-i18n="plan_per_unit">Dedicated Hashrate</span></li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i>
+                                    <strong>1.6%</strong> <span data-i18n="plan_per_day">Estimated Daily ROI</span>
+                                </li>
+                                <li class="mb-2"><i class="fa-solid fa-check text-warning me-2"></i> <span
+                                        data-i18n="plan_per_vip">Personal VIP Data Account</span></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-outline-warning w-100 fw-bold py-2 mt-auto"
+                            onclick="confirmPurchase('AvalonMiner 1366', 10000)" data-i18n="plan_btn_buy">Activate
+                            Tier</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="purchasePlanModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-secondary shadow-lg" style="background-color: #12161c; color: white;">
+                <div class="modal-header border-secondary border-opacity-50">
+                    <h5 class="modal-title fw-bold" data-i18n="modal_conf_title">Initialize Investment</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <p class="mb-1 text-secondary small" data-i18n="modal_sel_tier">Confirming your active subscription
+                        to:</p>
+                    <h5 class="text-warning fw-bold mb-4" id="modalPlanName">Antminer S19 Pro</h5>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-secondary" data-i18n="modal_net_cost">Total Premium:</span>
+                        <span class="fw-bold" id="modalPlanCost">$500 USD</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span class="text-secondary" data-i18n="modal_ded_source">Payment source:</span>
+                        <span class="text-white" data-i18n="modal_source_balance">Wallet Balance</span>
+                    </div>
+                </div>
+                <div class="modal-footer border-secondary border-opacity-50">
+                    <button type="button" class="btn btn-outline-secondary text-white" data-bs-dismiss="modal"
+                        data-i18n="modal_btn_cancel">Cancel</button>
+                    <button type="button" class="btn btn-warning fw-bold px-4 text-dark"
+                        style="background-color: #f0b90b; border: none;" onclick="processActivation()"
+                        data-i18n="modal_btn_activate">Confirm Lease</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1060;">
+        <div id="langToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive"
+            aria-atomic="true" style="background-color: #161a1e; border: 1px solid #1e2329 !important;">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="fa-solid fa-circle-check text-success me-2"></i>
+                    <span id="toastMessage">Language changed successfully!</span>
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedPlan = "";
+        let selectedCost = 0;
+
+        function confirmPurchase(planName, cost) {
+            selectedPlan = planName;
+            selectedCost = cost;
+            document.getElementById("modalPlanName").innerText = planName;
+            document.getElementById("modalPlanCost").innerText = "$" + cost.toLocaleString() + " USD";
+
+            const pModal = new bootstrap.Modal(document.getElementById("purchasePlanModal"));
+            pModal.show();
+        }
+
+        function processActivation() {
+            // Hide the active modal
+            bootstrap.Modal.getInstance(document.getElementById("purchasePlanModal")).hide();
+
+            // Show successful purchase toast feedback
+            const tMsg = document.getElementById("toastMessage");
+            tMsg.innerText = `Lease activated successfully! ${selectedPlan} tier is now mining.`;
+            const toastEl = new bootstrap.Toast(document.getElementById("langToast"));
+            toastEl.show();
+        }
+    </script>
+
+    <script src="../scripts/lang.js"></script>
+    <script src="../libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

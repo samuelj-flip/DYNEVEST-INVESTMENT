@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | DYNEVEST</title>
+    <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <style>
@@ -18,134 +19,260 @@
             background-color: #161a1e;
             border: 1px solid #1e2329;
             border-radius: 12px;
-            transition: border-color 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .contact-card:hover {
+            transform: translateY(-3px);
             border-color: #f0b90b;
         }
 
-        .form-control {
-            background-color: #0b0e11;
-            border: 1px solid #2b3139;
+        .form-control,
+        .form-control:focus {
+            background-color: #161a1e;
+            border-color: #1e2329;
             color: white;
         }
 
         .form-control:focus {
-            background-color: #0b0e11;
-            color: white;
             border-color: #f0b90b;
-            box-shadow: none;
+            box-shadow: 0 0 0 0.25px rgba(240, 185, 11, 0.25);
         }
 
-        nav a {
-            text-decoration: none;
-            color: #f0b90b;
+        /* Hover effect for desktop dropdown */
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover>.dropdown-menu {
+                display: block;
+                margin-top: 0;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <nav class="container fs-3 mb-4">
-        <a href="../index.html"><i class="fa-solid fa-arrow-left fs-5 me-2"></i>Home</a>
-    </nav>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top"
+            style="background-color: #0b0e11; border-bottom: 1px solid #1e2329;">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-uppercase" href="../index.html">
+                    <span style="color: #f0b90b;">DYNE</span>VEST
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link px-3" href="../index.html" data-i18n="nav_home">Home</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3" href="./plans.html"
+                                data-i18n="nav_plans">Investment Plans</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="./about.html"
+                                data-i18n="nav_about">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-3" href="./blog.html" data-i18n="nav_blog">Blog</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-3 active" href="./contacts.html"
+                                data-i18n="nav_contact">Contact</a></li>
+                    </ul>
 
-    <main class="container py-4">
+                    <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white d-flex align-items-center gap-1 py-1" href="#"
+                                id="langPicker" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-globe"></i> Language
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end border-secondary shadow"
+                                aria-labelledby="langPicker">
+                                <li><a class="dropdown-item py-2" href="#"
+                                        onclick="applyTranslations('en'); return false;">🇬🇧 English</a></li>
+                                <li><a class="dropdown-item py-2" href="#"
+                                        onclick="applyTranslations('de'); return false;">🇩🇪 Deutsch</a></li>
+                                <li><a class="dropdown-item py-2" href="#"
+                                        onclick="applyTranslations('es'); return false;">🇪🇸 Español</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="d-flex align-items-center mt-2 mt-lg-0">
+                            <a href="./login.html" class="btn btn-link text-white text-decoration-none me-3"
+                                data-i18n="nav_login">Login</a>
+                            <a href="./register.html" class="btn btn-warning px-4 fw-bold"
+                                style="background-color: #f0b90b; border: none;" data-i18n="nav_register">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
         <div class="text-center mb-5">
-            <h1 class="display-4 fw-bold text-white">Get in <span style="color: #f0b90b;">Touch</span></h1>
-            <p class="text-secondary lead">Have questions about our mining tiers? Our global support team is available
-                24/7.</p>
+            <h1 class="display-4 fw-bold text-white"><span data-i18n="contact_title_get">Get In</span> <span
+                    style="color: #f0b90b;" data-i18n="contact_title_touch">Touch</span></h1>
+            <p class="text-secondary lead" data-i18n="contact_subtitle">Have questions? We're available around the clock
+                to support you.</p>
         </div>
 
         <div class="row g-5">
             <div class="col-lg-5">
-                <div class="d-flex flex-column gap-4">
-
-                    <div class="contact-card p-4 d-flex align-items-center">
-                        <div class="icon-box me-4 text-warning fs-2">
-                            <i class="fa-solid fa-envelope"></i>
+                <div class="contact-card p-4 h-100 d-flex flex-column justify-content-between shadow-sm">
+                    <div>
+                        <h4 class="fw-bold text-white mb-4" data-i18n="contact_direct_reach">Direct Reach</h4>
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="me-3 fs-4 text-warning"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-0" data-i18n="contact_email">Email Us</h6>
+                                <p class="text-secondary small mb-0">support@dynevest.com</p>
+                            </div>
                         </div>
-                        <div>
-                            <h5 class="fw-bold mb-1">Email Support</h5>
-                            <p class="text-secondary mb-0 small">support@dynevest.com</p>
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="me-3 fs-4 text-warning"><i class="fa-solid fa-comments"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-0" data-i18n="contact_telegram">Join the Chat</h6>
+                                <p class="text-secondary small mb-0">@DynevestOfficial on Telegram</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="contact-card p-4 d-flex align-items-center">
-                        <div class="icon-box me-4 text-warning fs-2">
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </div>
-                        <div>
-                            <h5 class="fw-bold mb-1">Telegram</h5>
-                            <p class="text-secondary mb-0 small">@Dynevest_Global</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-card p-4 d-flex align-items-center">
-                        <div class="icon-box me-4 text-warning fs-2">
-                            <i class="fa-solid fa-clock"></i>
-                        </div>
-                        <div>
-                            <h5 class="fw-bold mb-1">Response Time</h5>
-                            <p class="text-secondary mb-0 small">Within 2 hours (24/7)</p>
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="me-3 fs-4 text-warning"><i class="fa-solid fa-clock"></i></div>
+                            <div>
+                                <h6 class="fw-bold mb-0" data-i18n="contact_hours">Support Hours</h6>
+                                <p class="text-secondary small mb-0" data-i18n="contact_hours_desc">24/7 Global
+                                    Infrastructure Support</p>
+                            </div>
                         </div>
                     </div>
-
+                    <div>
+                        <hr class="border-secondary opacity-25 my-4">
+                        <div class="social-links">
+                            <a href="#" class="btn btn-outline-secondary btn-sm me-2"><i
+                                    class="fa-brands fa-facebook"></i></a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm me-2"><i
+                                    class="fa-brands fa-telegram"></i></a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm"><i class="fa-brands fa-x"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="col-lg-7">
-                <div class="contact-card p-4 p-md-5">
-                    <h3 class="fw-bold mb-4">Send a Message</h3>
-
-                    <form action="#" method="POST" class="needs-validation" novalidate>
+                <div class="contact-card p-4 shadow-sm">
+                    <h4 class="fw-bold text-white mb-4" data-i18n="contact_form_title">Send Us a Message</h4>
+                    <form id="contactForm">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label class="form-label small text-secondary">First Name</label>
-                                <input type="text" class="form-control form-control-lg" required>
+                                <label class="form-label small text-secondary fw-bold" data-i18n="contact_lbl_name">Full
+                                    Name</label>
+                                <input type="text" class="form-control" placeholder="Enter your full name" required>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label small text-secondary">Last Name</label>
-                                <input type="text" class="form-control form-control-lg" required>
+                                <label class="form-label small text-secondary fw-bold"
+                                    data-i18n="contact_lbl_email">Email Address</label>
+                                <input type="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small text-secondary fw-bold"
+                                    data-i18n="contact_lbl_subj">Subject</label>
+                                <input type="text" class="form-control" placeholder="How can we help?" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small text-secondary fw-bold" data-i18n="contact_lbl_msg">Your
+                                    Message</label>
+                                <textarea class="form-control" rows="4" placeholder="Write your query here..."
+                                    required></textarea>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-warning fw-bold px-4 w-100"
+                                    style="background-color: #f0b90b; border: none;" data-i18n="contact_btn_send">
+                                    Submit Ticket
+                                </button>
                             </div>
                         </div>
-
-                        <div class="mb-3 mt-3">
-                            <label class="form-label small text-secondary">Email Address</label>
-                            <input type="email" class="form-control form-control-lg" required>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="form-label small text-secondary">Message</label>
-                            <textarea class="form-control form-control-lg" rows="5"
-                                placeholder="How can our team help you?" required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-warning btn-lg w-100 fw-bold"
-                            style="background-color: #f0b90b;">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </main>
 
+    <footer class="py-5" style="background-color: #0b0e11; border-top: 1px solid #1e2329;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h4 class="fw-bold mb-4" style="color: #f0b90b;">DYNEVEST</h4>
+                    <p class="text-secondary small" data-i18n="footer_brand_desc">The next generation of digital asset
+                        management. We simplify the complexity of crypto mining for everyday investors.</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary me-2"><i
+                                class="fa-brands fa-telegram"></i></a>
+                        <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fa-brands fa-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <h6 class="fw-bold text-white mb-4" data-i18n="footer_quick_links">Quick Links</h6>
+                    <ul class="list-unstyled text-secondary small">
+                        <li class="mb-2"><a href="../index.html" class="text-decoration-none text-secondary"
+                                data-i18n="nav_home">Home</a></li>
+                        <li class="mb-2"><a href="./about.html" class="text-decoration-none text-secondary"
+                                data-i18n="nav_about">About Us</a></li>
+                        <li class="mb-2"><a href="./plans.html" class="text-decoration-none text-secondary"
+                                data-i18n="nav_plans">Investment</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6 class="fw-bold text-white mb-4" data-i18n="footer_legal">Legal</h6>
+                    <ul class="list-unstyled text-secondary small">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary"
+                                data-i18n="footer_privacy">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-secondary"
+                                data-i18n="footer_terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h6 class="fw-bold text-white mb-4" data-i18n="footer_newsletter">Newsletter</h6>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control bg-dark border-secondary text-white"
+                            placeholder="Email Address">
+                        <button class="btn btn-warning" type="button" data-i18n="newsletter_join">Join</button>
+                    </div>
+                    <p class="text-secondary" style="font-size: 13px;">&copy; <span id="year"></span> DYNEVEST. All
+                        Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1060;">
+        <div id="langToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive"
+            aria-atomic="true" style="background-color: #161a1e; border: 1px solid #1e2329 !important;">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="fa-solid fa-circle-check text-success me-2"></i>
+                    <span id="toastMessage">Language changed successfully!</span>
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Basic Bootstrap validation script for client-side check
-        (() => {
-            'use strict'
-            const forms = document.querySelectorAll('.needs-validation')
-            Array.from(forms).forEach(form => {
-                form.addEventListener('submit', event => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    }
-                    form.classList.add('was-validated')
-                }, false)
-            })
-        })()
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Basic form intercept for clean feedback
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            this.reset();
+
+            // Re-using the toast UI for successful form submission
+            const toastMessage = document.getElementById("toastMessage");
+            toastMessage.textContent = "Message received! We will reach out within 24 hours.";
+            const toastEl = new bootstrap.Toast(document.getElementById("langToast"));
+            toastEl.show();
+        });
     </script>
+
+    <script src="../scripts/lang.js"></script>
+    <script src="../libs/bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
