@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts', # add this line here
 ]
 
 MIDDLEWARE = [
@@ -78,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dynevest_db',        # The name of the database you create in MySQL
         'USER': 'root',                # Your MySQL username (default is usually root)
-        'PASSWORD': 'your_password',   # Your MySQL password
+        'PASSWORD': 'iLovebeing@wesome123',   # Your MySQL password
         'HOST': '127.0.0.1',           # Means "Localhost" / running on your computer
         'PORT': '3306',                # The standard port for MySQL
     }
