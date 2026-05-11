@@ -55,8 +55,9 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        # This tells Django to look in core/templates for index.html
+        'DIRS': [BASE_DIR / 'templates'],
+        'APP_DIRS': True, # This allows it to find core/accounts/templates
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
@@ -116,3 +117,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [BASE_DIR.parent / 'statics']
